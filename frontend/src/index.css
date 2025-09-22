@@ -1,0 +1,231 @@
+:root {
+  --pink-1: #ff4da6;
+  --pink-2: #ff86c1;
+  --bg: #fff6fb;
+  --muted: #6b6b6b;
+  --card-shadow: 0 6px 18px rgba(255, 77, 166, 0.12);
+  --glass: rgba(255, 255, 255, 0.6);
+  --danger: #ff3b6f;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+}
+body {
+  margin: 0;
+  background: linear-gradient(180deg, var(--bg), #fff);
+  color: #222;
+}
+
+/* Topbar */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px;
+  background: linear-gradient(90deg, var(--pink-1), var(--pink-2));
+  color: white;
+  box-shadow: var(--card-shadow);
+}
+.brand {
+  margin: 0;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+}
+.user-area {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.user-name {
+  font-weight: 600;
+}
+
+/* Layout */
+.content {
+  display: flex;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 28px auto;
+  padding: 0 16px;
+}
+.left {
+  flex: 0 0 360px;
+}
+.right {
+  flex: 1;
+}
+
+/* Cards and forms */
+.auth-page {
+  display: flex;
+  height: calc(100vh - 40px);
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, var(--bg), #fff);
+}
+.auth-card {
+  width: 360px;
+  padding: 22px;
+  border-radius: 16px;
+  background: white;
+  box-shadow: var(--card-shadow);
+  text-align: center;
+}
+.auth-card h2 {
+  margin-top: 0;
+  color: var(--pink-1);
+}
+.auth-card input,
+.auth-card textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 10px;
+  border: 1px solid #f0d7e6;
+  outline: none;
+}
+.btn {
+  background: linear-gradient(90deg, var(--pink-1), var(--pink-2));
+  border: none;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 10px rgba(255, 77, 166, 0.12);
+}
+.btn.ghost {
+  background: transparent;
+  color: var(--pink-1);
+  border: 1px solid rgba(255, 77, 166, 0.12);
+}
+.btn.small {
+  padding: 6px 8px;
+  font-size: 0.85rem;
+}
+.btn.danger {
+  background: var(--danger);
+  box-shadow: none;
+}
+.error {
+  background: rgba(255, 0, 80, 0.08);
+  color: #d8005a;
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+/* Task form */
+.task-form {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), white);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  margin-bottom: 16px;
+}
+.task-form input,
+.task-form textarea,
+.task-form select {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #f7d7e8;
+  background: #fff;
+}
+.task-form textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+.task-form .row {
+  display: flex;
+  gap: 8px;
+}
+.task-form .row input[type="date"] {
+  flex: 1;
+}
+.task-form .row select {
+  width: 130px;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.filters button {
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+}
+.filters button.active {
+  background: linear-gradient(90deg, var(--pink-1), var(--pink-2));
+  color: white;
+}
+
+/* Tasks */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.task {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 12px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #fff, #fff6fb);
+  margin-bottom: 10px;
+  box-shadow: 0 6px 14px rgba(255, 77, 166, 0.04);
+}
+.task.done {
+  opacity: 0.75;
+  text-decoration: line-through;
+}
+.task-left {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.task-title {
+  font-weight: 700;
+}
+.task-meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.task-desc {
+  margin-top: 6px;
+  color: #555;
+}
+.task-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 18px;
+  color: var(--muted);
+  margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .content {
+    flex-direction: column;
+    padding: 12px;
+  }
+  .left {
+    width: 100%;
+    flex: unset;
+  }
+}
